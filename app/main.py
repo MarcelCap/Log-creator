@@ -13,7 +13,7 @@ def create_archive():
     # I use the 'with' block to ensure the file is properly closed
     # and saved by the operating system, even if an error occurs
     # during writing.
-    # I use 'utf-8' encoding so that accented words,
+    # I use 'utf-8' encoding so that accented strings,
     # like "Olá", don't break if the log is read on a Linux system
     # in the future.
     # The 'a' (append) mode was chosen to add new records to the end
