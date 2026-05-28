@@ -35,3 +35,9 @@ docker-compose up --build
 
 ## 🧠 What I Learned
 During this project, I learned how Docker handles virtualization using WSL 2 on Windows, the importance of using volume mapping (`volumes`) to persist files created inside the container to the host machine, and how context managers (`with open(...)`) work in Python to prevent memory leaks and file corruption.
+
+### 🛡️ Best Practices Applied: .dockerignore
+Even though this is a small project, I included a `.dockerignore` file. This is a crucial practice for:
+1. **Security:** Preventing sensitive data (like `.env` files or `.git` history) from leaking into the Docker image.
+2. **Performance:** Ignoring heavy local folders (like virtual environments) to make the image build process faster and the final image lighter.
+3. **Consistency:** Ignoring local `log.txt` files ensures the container always starts with a clean slate, generating logs purely through the configured volume.
