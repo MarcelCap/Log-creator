@@ -1,9 +1,9 @@
 services:
-  meu_app_python:
-    # Faz o Compose procurar o Dockerfile na pasta atual (.) e construir a imagem.
+  my_python_app:
+    # Makes Compose look for the Dockerfile in the current folder (.) and build the image.
     build: .
 
-    # Cria a ponte (volume) entre a máquina e o container
-    # Sintaxe: [Pasta do Windows]:[Pasta dentro do container]
+    # Creates the bridge (volume) between the host machine and the container.
+    # Syntax: [Windows folder]:[Folder inside the container]
     volumes:
       - .:/app
