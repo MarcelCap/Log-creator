@@ -34,4 +34,4 @@ docker-compose up --build
 5. Look inside the project folder. A new file called `log.txt` will automatically appear containing the exact time of the execution.
 
 ## 🧠 What I Learned
-*During this project, I learned how Docker handles virtualization using WSL 2 on Windows, the importance of using volume mapping (`volumes`) to persist files created inside the container to the host machine, and how context managers (`with open(...)`) work in Python to prevent memory leaks and file corruption.
+During this project, I learned how Docker handles virtualization using WSL 2 on Windows, the importance of using volume mapping (`volumes`) to persist files created inside the container to the host machine, and how context managers (`with open(...)`) work in Python to prevent memory leaks and file corruption.
