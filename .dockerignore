@@ -1,0 +1,34 @@
+# --- .dockerignore ---
+
+# 1. Version Control
+# We ignore the .git folder because the container doesn't need the repository's 
+# history to run the app. This saves space and prevents potential security leaks.
+.git
+.gitignore
+README.md
+
+# 2. Local Logs
+# We ignore local log files so they are not copied into the image during the 'build' phase. 
+# The container should start with a clean state and generate its own logs via volumes.
+*.log
+log.txt
+
+# 3. Python Cache and Virtual Environments
+# We ignore cache and local virtual environments because the Docker container 
+# will install its own isolated dependencies based on the Linux environment.
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+env/
+
+# 4. IDE Configurations
+# Prevents personal editor settings from polluting the container's environment.
+.vscode/
+.idea/
+
+# 5. Docker Configuration Files
+# The container doesn't need the instructions used to build itself.
+Dockerfile
+docker-compose.yml
