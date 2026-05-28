@@ -1,42 +1,39 @@
 import os
 from datetime import datetime
 
-
-# Essa função cria o arquivo log.txt;
-# Depois escreve a data e hora atual nesse arquivo.
-# Além disso, ela printa "Olá, Mundo!" no terminal para
-# verificar se o programa está sendo executado corretamente.
+# This function creates the log.txt file;
+# Then it writes the current date and time to this file.
+# Additionally, it prints "Hello, World!" to the terminal to
+# verify if the program is running correctly.
 def create_archive():
-    print("Olá, Mundo!")
+    print("Hello, World!")
     file = "log.txt"
     now = datetime.now()
 
-    # Utilizo o bloco 'with' para garantir que o arquivo seja fechado
-    # e salvo corretamente pelo sistema operacional, mesmo que ocorra um erro
-    # durante a escrita.
-    # Uso o encoding 'utf-8' para que palavras com acento,
-    # como "Olá", não quebrem se o log for lido em um sistema Linux
-    # futuramente.
-    # O modo 'a' (append) foi escolhido para adicionar novos registros no final
-    # do arquivo, protegendo o histórico de execuções anteriores.
-    with open(file, "a", encoding="utf-8") as arquivo:
-        arquivo.write("\nOlá, mundo!\n")
-        arquivo.write("Este é um arquivo de texto criado em Python.\n")
-        arquivo.write(f'Dia de hoje: {now.strftime("%d/%m/%Y")}\n')
-        arquivo.write(f'Hora atual [HH:MM:SS]-> {now.strftime("%H:%M:%S")}\n')
-        arquivo.write(f'Hora atual [AM/PM] -> {now.strftime("%I:%M %p")}\n')
+    # I use the 'with' block to ensure the file is properly closed
+    # and saved by the operating system, even if an error occurs
+    # during writing.
+    # I use 'utf-8' encoding so that accented words,
+    # like "Olá", don't break if the log is read on a Linux system
+    # in the future.
+    # The 'a' (append) mode was chosen to add new records to the end
+    # of the file, protecting the history of previous executions.
+    with open(file, "a", encoding="utf-8") as archive:
+        archive.write("\nHello, World!\n")
+        archive.write("This is a text file created in Python.\n")
+        archive.write(f'Today\'s date: {now.strftime("%d/%m/%Y")}\n')
+        archive.write(f'Current time [HH:MM:SS] -> {now.strftime("%H:%M:%S")}\n')
+        archive.write(f'Current time [AM/PM] -> {now.strftime("%I:%M %p")}\n')
 
-
-# Essa função tem o propósito de deletar o arquivo,
-# para testes eventuais e não ser necessário deletar à mão.
+# This function aims to delete the file,
+# for occasional testing, avoiding the need to delete it manually.
 def delete_archive():
-    arquivo = "log.txt"
+    file = "log.txt"
     try:
-        os.remove(arquivo)
-        print("Arquivo deletado com sucesso!")
+        os.remove(file)
+        print("File deleted successfully!")
     except FileNotFoundError:
-        print("O arquivo não foi encontrado.")
-
+        print("File not found.")
 
 create_archive()
 # delete_archive()
