@@ -1,19 +1,19 @@
-# O docker vai ler esse arquivo e criar o container
-# a partir das instruções abaixo
+# Docker will read this file and create the container
+# based on the instructions below.
 
-# Ele vai usar a seguinte imagem como interpretador, não sendo necessário
-# baixar instâncias. Assim, ele configura o ambiente.
-# Usei o python 3.12-slim para facilitar o processamento na criação do container
+# It will use the following image as the interpreter, so there's no need
+# to download instances manually. This sets up the environment.
+# I used python 3.12-slim to optimize processing when creating the container.
 FROM python:3.12-slim
 
-# Defino qual o espaço de trabalho/onde vai ser executado
+# Defines the workspace/where the app will be executed.
 WORKDIR /app
 
-# O que copiar para dentro do container
-# O 1° '.' significa a pasta atual do windows
-# O 2° '.' significa a pasta /app do container
-# Sintaxe: copy source dest
+# What to copy into the container.
+# The 1st '.' means the current folder on Windows.
+# The 2nd '.' means the /app folder inside the container.
+# Syntax: copy source dest
 COPY . .
 
-# Comando que o container vai executar logo após ser ligado
+# Command the container will execute right after it starts.
 CMD ["python", "app/main.py"]
