@@ -4,6 +4,6 @@ services:
     build: .
 
     # Creates the bridge (volume) between the host machine and the container.
-    # Syntax: [Windows folder]:[Folder inside the container]
+    # Syntax: [Host folder]:[Folder inside the container]
     volumes:
       - .:/app
