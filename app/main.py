@@ -35,5 +35,13 @@ def delete_archive():
     except FileNotFoundError:
         print("File not found.")
 
-create_archive()
-# delete_archive()
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "--delete":
+        delete_archive()
+    elif len(sys.argv) > 1 and sys.argv[1] == "--create":
+        create_archive()
+    else:
+        print("Please add only one of the commands below:\n")
+        print("1. '--delete' to delete the archive log.txt\n")
+        print("2. '--create' to create or add a log\n")
