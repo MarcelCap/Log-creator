@@ -15,5 +15,8 @@ WORKDIR /app
 # Syntax: copy source dest
 COPY . .
 
+# ENTRYPOINT: The fixed command that doesn't change. 
 # Command the container will execute right after it starts.
-CMD ["python", "app/main.py"]
+# The container will always run the Python interpreter in this achive.
+# This command capture the flags '--create' and '--delete'
+ENTRYPOINT ["python", "-u", "app/main.py"]
